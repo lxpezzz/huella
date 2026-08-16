@@ -41,7 +41,10 @@
     "gallery": [
       "/images/gallery/gallery-01.webp",
       "/images/gallery/gallery-02.webp",
-      "/images/gallery/gallery-03.webp"
+      "/images/gallery/gallery-03.webp",
+      "/images/gallery/gallery-04.webp",
+      "/images/gallery/gallery-05.webp",
+      "/images/gallery/gallery-06.webp"
     ],
     "beforeAfter": [
       {
@@ -53,7 +56,7 @@
         "after": "/images/before-after/after-02.webp"
       }
     ],
-    "about": "https://images.unsplash.com/photo-1601758124096-1fd661873b95?auto=format&fit=crop&w=900&q=80",
+    "about": "/images/about/about-01.webp",
     "reviewers": [
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",

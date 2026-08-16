@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import site from '../data/site.json';
+import { Image } from "astro:assets";
+import site from "../data/site.json";
 ---
 
 <section id="nosotros" class="section about" aria-labelledby="about-title">
@@ -9,15 +9,17 @@ import site from '../data/site.json';
       <p class="text-label about__eyebrow reveal">Sobre Huella</p>
       <h2 id="about-title" class="text-display about__title reveal">
         Aquí conocemos a nuestros clientes por su nombre.
-        <em>A los de cuatro patas también.</em>
+        <em> A los de cuatro patas también.</em>
       </h2>
       <div class="about__body reveal">
         <p class="text-body">
-          Somos un espacio pequeño en el que cada perro entra con su propio ritmo. No hacemos citas
-          encadenadas ni trabajamos con prisas: preferimos dedicar el tiempo que cada animal necesita.
+          Somos un espacio pequeño en el que cada perro entra con su propio
+          ritmo. No hacemos citas encadenadas ni trabajamos con prisas:
+          preferimos dedicar el tiempo que cada animal necesita.
         </p>
         <p class="text-body">
-          Usamos productos adecuados a cada tipo de piel y pelaje, y nos formamos continuamente.
+          Usamos productos adecuados a cada tipo de piel y pelaje, y nos
+          formamos continuamente.
         </p>
       </div>
       <ul class="about__highlights reveal">
@@ -30,7 +32,7 @@ import site from '../data/site.json';
     <div class="about__visual reveal-scale">
       <div class="about__frame">
         <Image
-          src={site.images.about}
+          src={`${import.meta.env.BASE_URL}${site.images.about}`}
           alt="Equipo de Huella atendiendo a un perro con calma"
           class="img-cover"
           width={900}
