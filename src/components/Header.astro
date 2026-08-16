@@ -18,9 +18,13 @@ const navLinks = [
       aria-label="Ir al inicio"
     >
       <img
-        src={`${import.meta.env.BASE_URL}images/logo-huella.svg`}
+        src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/logo-huella.svg`}
         alt="Huella"
         class="header__logo-img"
+        width="160"
+        height="53"
+        loading="eager"
+        decoding="async"
       />
     </a>
 

@@ -1,6 +1,6 @@
 # Huella — Demo PetX
 
-Demo ficticia de una peluquería canina cercana, moderna y natural. Creada con Astro como proyecto independiente para mostrar una identidad visual diferente a la demo Nimo.
+Demo ficticia de una peluquería canina cercana, moderna y natural. 
 
 ## Stack
 
@@ -8,15 +8,6 @@ Demo ficticia de una peluquería canina cercana, moderna y natural. Creada con A
 - HTML semántico
 - CSS moderno
 - JavaScript mínimo (vanilla)
-
-## Scripts
-
-```bash
-npm install
-npm run dev
-npm run build
-npm run preview
-```
 
 ## Datos editables
 

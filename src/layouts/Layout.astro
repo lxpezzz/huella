@@ -9,6 +9,7 @@ interface Props {
 
 const { title = site.meta.title, description = site.description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const heroPreloadUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/hero-main.webp`;
 ---
 
 <!doctype html>
@@ -22,16 +23,38 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Fonts -->
+    <!-- Google Fonts: Preconnect & Non-blocking Async Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
+    />
+    <link
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Preload Hero Image (LCP) -->
+    <link
+      rel="preload"
+      as="image"
+      href={heroPreloadUrl}
+      type="image/webp"
+      fetchpriority="high"
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

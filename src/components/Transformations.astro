@@ -80,7 +80,7 @@ const casesData: CaseDetail[] = [
                   <!-- After Image (Base) -->
                   <div class="compare-layer compare-layer--after">
                     <Image
-                      src={`${import.meta.env.BASE_URL}${pair.after}`}
+                      src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${pair.after.startsWith('/') ? pair.after : `/${pair.after}`}`}
                       alt={`Después de la sesión — ${detail.breed}`}
                       class="img-cover compare-image"
                       width={480}
@@ -98,7 +98,7 @@ const casesData: CaseDetail[] = [
                   <!-- Before Image (Overlay clipped) -->
                   <div class="compare-layer compare-layer--before">
                     <Image
-                      src={`${import.meta.env.BASE_URL}${pair.before}`}
+                      src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${pair.before.startsWith('/') ? pair.before : `/${pair.before}`}`}
                       alt={`Antes de la sesión — ${detail.breed}`}
                       class="img-cover compare-image"
                       width={480}

@@ -32,7 +32,7 @@ import site from "../data/site.json";
     <div class="about__visual reveal-scale">
       <div class="about__frame">
         <Image
-          src={`${import.meta.env.BASE_URL}${site.images.about}`}
+          src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${site.images.about.startsWith('/') ? site.images.about : `/${site.images.about}`}`}
           alt="Equipo de Huella atendiendo a un perro con calma"
           class="img-cover"
           width={900}

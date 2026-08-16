@@ -18,14 +18,15 @@ import site from "../data/site.json";
           <li class="gallery__item">
             <figure class="gallery__figure reveal-scale">
               <Image
-                src={`${import.meta.env.BASE_URL}${src}`}
+                src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${src.startsWith('/') ? src : `/${src}`}`}
                 alt={`Trabajo de peluquería canina número ${index + 1}`}
                 class="img-cover gallery__image"
-                width={400}
-                height={400}
-                widths={[200, 400]}
-                sizes="180px"
+                width={360}
+                height={360}
+                widths={[180, 360]}
+                sizes="(max-width: 768px) 150px, 176px"
                 decoding="async"
+                loading="lazy"
               />
             </figure>
           </li>
@@ -83,12 +84,12 @@ import site from "../data/site.json";
 
   .gallery__figure {
     position: relative;
-    width: 9px;
-    height: 9px;
+    width: clamp(8.5rem, 28vw, 11rem);
+    height: clamp(8.5rem, 28vw, 11rem);
     margin: 0;
     overflow: hidden;
     background-color: var(--bg-warm);
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
   }
 
   .gallery__image {
